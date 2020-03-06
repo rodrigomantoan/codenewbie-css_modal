@@ -17,7 +17,7 @@ Making commented code you help you not only learn more (because you're describin
 ### Make buttons look clickable
 When creating something that will be clickable, try to make it look as clickable as possible, avoid making buttons as plain texts with no effect or anything that shows it can be clickable. Simple :hover effect, some small shadow, color, anything that you think will make it look clickable.
 
-I've created a "bad example" of the same page but a button that I think won't provide a good experience. You can check *[bad-button.html](../codenewbie-css_modal/bad-button.html)*.
+I've created a "bad example" of the same page but a button that I think won't provide a good experience. You can check *[bad-button.html](/codenewbie-css_modal/bad-button.html)*.
 
 -------
 
