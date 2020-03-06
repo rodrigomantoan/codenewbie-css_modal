@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Defines the charset of your website. Check https://www.w3schools.com/html/html_charset.asp -->
+		<meta charset="UTF-8" />
+
+		<!--
+            viewport meta will help in the responsiveness of your website. 
+            width=device-width make the website follow the width of the device.
+            initial-scale=1.0 will set the initial zoom level of the page.
+            Check https://www.w3schools.com/css/css_rwd_viewport.asp
+        -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- The page title - can be seen in browser tab -->
+		<title>CSS Modal</title>
+
+		<!-- Import Poppins from Google Font - it's just to add design, I like this font -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap" />
+
+		<!-- Link 'style.css' stylesheet and apply it to the page -->
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+
+		<!-- Creating an archor to be used as a button -->
+		<a href="#modal" class="btn">Open Modal</a>
+
+		<!-- This is the modal section-->
+		<div class="modal-block" id="modal">
+
+			<!-- The modal-block is here to get the target and will act as the 'holder' of the modal, it will  -->
+			<div class="modal-content">
+
+				<!-- '&times;' is an HTML entity that will be converted into a symbol. Check https://www.w3schools.com/charsets/ref_html_entities_4.asp for more HTML entities. You could link to the section it was by changing the href to the id (eg. #portfolio). -->
+				<a href="#" title="Close" class="modal-close">&times;</a>
+
+				<!-- Simple h2 element to place information -->
+				<h2>This is a modal using HTML and CSS only</h2>
+			</div>
+		</div>
+	</body>
+
+</html>

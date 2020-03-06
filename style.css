@@ -1,0 +1,113 @@
+/*
+ *	=== THIS IS WHAT IS NEEDED TO MAKE THE MODAL. ===
+*/
+
+.modal-block {
+	visibility: hidden; /* the element will start hidden*/
+	opacity: 0; /* with 0 opacity */
+	position: fixed; /* fixed in the page */
+	background-color: rgba(0, 0, 0, .5); /* background color with opacity (red,green,blue,alpha) */
+	height: 100%; /* 100% of the wiewport (page) height */
+	width: 100%; /* 100% of the wiewport (page) width */
+	/* this will position it at the top-left */
+	top: 0; /* will be 'touching' the top border of the page */
+	left: 0; /* will be 'touching' the left border of the page */
+
+	transition: all .7s; /* added to create smooth transition to the pseudo-classes (like :target, :hover) */
+	z-index: 99; /* it will place the element on layer 99 (it will be placed 'in front' of any lower value)*/
+}
+
+/* when the element is targetted, it will change to this */
+.modal-block:target {
+	visibility: visible; /* it will become visible */
+	opacity: 1; /* it will have full opacity */
+}
+
+.modal-close {
+	position: absolute; /* will be positioned based on it's parent (.modal-content) */
+	top: 1rem; /* distance from the top of it's parent (.modal-content) */
+	right: 2rem; /* distance from the right of it's parent (.modal-content) */
+	font-size: 1.5rem; /* using rem for accessibility */
+}
+
+.modal-content {
+	position: absolute; /* will be positioned based on it's parent (.modal-block) */
+	top: 50%; /* % distance from left of the parent */
+	left: 50%; /* % distance from left of the parent */
+	height: 75%; /* % of it's parent height */
+	width: 60%; /* % of it's parent width */
+	transform: translate(-50%, -50%); /* will position the element in the middle of the screen */
+	background-color: white; /* set the bckground color (you can use color-name, hex, rgba */
+}
+
+/*
+ *	=== DOWN HERE IS JUST DESIGN TO LOOK BETTER ===
+*/
+
+/* it will be applied to everything in the page */
+* {
+	font-family: "Poppins", sans-serif; /* This will apply the Google Font into evertying */
+	font-size: 1rem; /* the size of the font, using rem for more accessibility */
+	box-sizing: border-box; /* this will make all border, padding, and margin to stay inside the parent (check https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing) */
+}
+
+html,
+body {
+	margin: 0; /* remove margin from body and html tags */
+	padding: 0; /* remove padding from body and html tags */
+	display: flex; /* easier to make responsive layout without float (check: https://www.w3schools.com/css/css3_flexbox.asp). Avoid using it on body or html tags. */
+	width: 100vw;
+	height: 100vh;
+	align-items: center; /* align content vertically in a flex element */
+	justify-content: center; /* align content horizontally in a flex element */
+
+	/* Check https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient for more info about gradient background (I've used this from https://codepen.io/edmundojr/pen/xOYJGw) */
+	background: linear-gradient(90deg, #f3f3f3 20px, transparent 1%) center, linear-gradient(#f3f3f3 20px, transparent 1%) center, #dbdbdb;
+	background-size: 22px 22px;
+}
+
+a {
+	text-decoration: none; /* remove the decoration (the default underline from <a> elements)*/
+}
+
+/* This will create design for the btn class (button) */
+.btn {
+	border-radius: .5rem; /* this will create rounded border (using rem for responsiveness) */
+	padding: 1.2rem; /* adding space between the content and the border of the element (using rem for responsiveness) */
+	background-color: rgba(194, 82, 255, .7); /* background color with opacity (red,green,blue,alpha) */
+	box-shadow: 0 0 .4rem rgba(0, 0, 0, 0.3); /* box shadow with opacity (red,green,blue,alpha) */
+	color: white; /* text color to white */
+
+	transition: all .4s; /* added to create smooth transition to the pseudo-classes (like :target, :hover) */
+}
+
+/* pseudo-class that will activate when you ':hover' the element */
+.btn:hover {
+	background-color: rgba(205, 112, 255, 0.7); /* background color with opacity (red,green,blue,alpha) */
+}
+
+/* will add style to these three elements/pseudo-classes */
+.btn,
+.btn:hover,
+.btn:focus {
+	outline: 0;
+}
+
+.modal-content {
+	display: flex; /* easier to make responsive layout without float (check: https://www.w3schools.com/css/css3_flexbox.asp). */
+	align-items: center; /* align content vertically in a flex element */
+	justify-content: center; /* align content horizontally in a flex element */
+	border-radius: .5rem;
+	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+	padding-top: 2rem;
+}
+
+.modal-close {
+	transition: all .7s; /* added to create smooth transition to the pseudo-classes (like :target, :hover) */
+}
+
+.modal-close:hover {
+	transition: all .4s; /* added to create smooth transition to the pseudo-classes (like :target, :hover) */
+	text-shadow: 0 0 .7rem rgba(0, 0, 0, .4); /* add text shadow */
+	opacity: .7; /* set opacity of the element */
+}
