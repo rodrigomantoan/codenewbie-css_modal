@@ -24,18 +24,18 @@
 }
 
 .modal-close {
-	position: absolute; /* will be positioned based on it's parent (.modal-content) */
-	top: 1rem; /* distance from the top of it's parent (.modal-content) */
-	right: 2rem; /* distance from the right of it's parent (.modal-content) */
+	position: absolute; /* will be positioned based on its parent (.modal-content) */
+	top: 1rem; /* distance from the top of its parent (.modal-content) */
+	right: 2rem; /* distance from the right of its parent (.modal-content) */
 	font-size: 1.5rem; /* using rem for accessibility */
 }
 
 .modal-content {
-	position: absolute; /* will be positioned based on it's parent (.modal-block) */
-	top: 50%; /* % distance from left of the parent */
+	position: absolute; /* will be positioned based on its parent (.modal-block) */
+	top: 53%; /* % distance from left of the parent */
 	left: 50%; /* % distance from left of the parent */
-	height: 75%; /* % of it's parent height */
-	width: 60%; /* % of it's parent width */
+	height: 75%; /* % of its parent height */
+	width: 60%; /* % of its parent width */
 	transform: translate(-50%, -50%); /* will position the element in the middle of the screen */
 	background-color: white; /* set the bckground color (you can use color-name, hex, rgba */
 }
@@ -98,12 +98,28 @@ a {
 	align-items: center; /* align content vertically in a flex element */
 	justify-content: center; /* align content horizontally in a flex element */
 	border-radius: .5rem;
-	box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+	filter: drop-shadow(0 0 .5rem rgba(0, 0, 0, .3)); /**/
 	padding-top: 2rem;
 }
 
+.modal-content::before {
+	content: ''; /* pseudo classes like before/after need content to 'run' */
+	position: absolute; /* used to position the pseudo based on its parent */
+	top: -3.2vh; /* added to move the pseudo class a little higher so the effect can be visible */
+	left: 0; /* left position of the content (zero) */
+	height: 100px; /* the height of the content */
+	width: 100%; /*will be the same width of its parent */
+	background-color: inherit; /* will use the same background-color of its parent (.modal-content)*/
+	z-index: 10;
+	transform: skewY(-3deg); /* skewY to create diagonal effect */
+}
+
 .modal-close {
+	color: black;
+	position: absolute; /* added to modify the position of the close */
+	top: -3.5vh;
 	transition: all .7s; /* added to create smooth transition to the pseudo-classes (like :target, :hover) */
+	z-index: 11;
 }
 
 .modal-close:hover {
